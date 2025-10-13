@@ -5,7 +5,6 @@
  * Description: Semanticflow tracker
  * Version: 1.1.0
  * Author: SemanticFlow
- * Update URI: https://git-updater.com
  */
 
 // Prevent direct access
@@ -241,9 +240,14 @@ if (is_admin()) {
     new SemanticFlow_Tracker_Admin();
 }
 
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+require 'plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
-require_once __DIR__ . '/vendor/afragen/git-updater-lite/Lite.php';
-( new \Fragen\Git_Updater\Lite( __FILE__ ) )->run();
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/DELE-CONSULTING/semanticflow-wp-plugin',
+	__FILE__,
+	'semanticflow-wp-plugin'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
