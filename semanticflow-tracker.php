@@ -3,7 +3,7 @@
  * Plugin Name: SemanticFlow Tracker
  * Plugin URI: https://semanticflow.ai
  * Description: Semanticflow tracker
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: SemanticFlow
  */
 
