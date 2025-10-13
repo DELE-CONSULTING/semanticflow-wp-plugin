@@ -15,7 +15,7 @@
 ## Configuration de l'ID du projet
 
 1. Dans votre tableau de bord WordPress, allez dans **Réglages** → **SemanticFlow Tracker**
-2. Entrez votre **ID de projet**  dans le champ prévu : a2fb9732-0384-49c3-91eb-2fd8f90bdeda
+2. Entrez votre **ID de projet**  dans le champ prévu.
 3. Cliquez sur **Enregistrer les modifications**
 
 ### Simuler une visite de bot LLM (pour les tests)
