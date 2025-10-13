@@ -1,12 +1,11 @@
 <?php
 /**
  * Plugin Name: SemanticFlow Tracker
- * Plugin URI: https://semanticflow.ai
+ * Plugin URI: https://github.com/DELE-CONSULTING/semanticflow-wp-plugin
  * Description: Semanticflow tracker
  * Version: 1.0.2
  * Author: SemanticFlow
- * GitHub Plugin URI: DELE-CONSULTING/semanticflow-wp-plugin
- * GitHub Plugin URI: https://github.com/DELE-CONSULTING/semanticflow-wp-plugin
+ * Update URI: https://git-updater.com
  */
 
 // Prevent direct access
@@ -241,3 +240,10 @@ class SemanticFlow_Tracker_Admin {
 if (is_admin()) {
     new SemanticFlow_Tracker_Admin();
 }
+
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+require_once __DIR__ . '/vendor/afragen/git-updater-lite/Lite.php';
+( new \Fragen\Git_Updater\Lite( __FILE__ ) )->run();
