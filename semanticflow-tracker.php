@@ -5,6 +5,8 @@
  * Description: Semanticflow tracker
  * Version: 1.0.1
  * Author: SemanticFlow
+ * GitHub Plugin URI: DELE-CONSULTING/semanticflow-wp-plugin
+ * GitHub Plugin URI: https://github.com/DELE-CONSULTING/semanticflow-wp-plugin
  */
 
 // Prevent direct access
