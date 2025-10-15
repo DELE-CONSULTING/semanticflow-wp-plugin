@@ -3,7 +3,7 @@
  * Plugin Name: SemanticFlow Tracker
  * Plugin URI: https://github.com/DELE-CONSULTING/semanticflow-wp-plugin
  * Description: Semanticflow tracker
- * Version: 1.2.0
+ * Version: 1.2.2
  * Author: SemanticFlow
  */
 
@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 
 class SemanticFlow_Tracker {
     
-    private $base_url = 'https://api.semanticflow.ai/functions/v1/track';
+    private $base_url = 'https://txsipwnsmxemwkgnseqn.supabase.co/functions/v1/track';
     private $project_id = 'xxxxx-xxxx';
     
     public function __construct() {
