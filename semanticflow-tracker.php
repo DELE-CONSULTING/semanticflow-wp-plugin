@@ -3,7 +3,7 @@
  * Plugin Name: SemanticFlow Tracker
  * Plugin URI: https://github.com/DELE-CONSULTING/semanticflow-wp-plugin
  * Description: Semanticflow tracker
- * Version: 1.2.3
+ * Version: 1.2.4
  * Author: SemanticFlow
  */
 

@@ -4,7 +4,7 @@ Tags: analytics, tracking
 Requires at least: 5.0
 Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 
 Track and analyze AI bot visits to your WordPress.
 
