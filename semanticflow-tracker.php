@@ -3,7 +3,7 @@
  * Plugin Name: SemanticFlow Tracker
  * Plugin URI: https://github.com/DELE-CONSULTING/semanticflow-wp-plugin
  * Description: Semanticflow tracker
- * Version: 1.2.2
+ * Version: 1.2.3
  * Author: SemanticFlow
  */
 
@@ -44,13 +44,24 @@ class SemanticFlow_Tracker {
             return;
         }
         
+        // Resolve project id from settings (falls back to default)
+        $project_id_option = get_option('sft_project_id');
+        $resolved_project_id = is_string($project_id_option) ? trim(sanitize_text_field($project_id_option)) : '';
+        if ($resolved_project_id === '' || $resolved_project_id === 'xxxxx-xxxx') {
+            $resolved_project_id = $this->project_id;
+        }
+        // If still not set, skip sending
+        if (empty($resolved_project_id) || $resolved_project_id === 'xxxxx-xxxx') {
+            return;
+        }
+        
         $ip_address = $this->get_client_ip();
         $referrer = isset($_SERVER['HTTP_REFERER']) ? esc_url_raw($_SERVER['HTTP_REFERER']) : '';
         $url = get_permalink($post->ID);
         
         // Prepare data payload
         $data = array(
-            'project_id' => $this->project_id,
+            'project_id' => $resolved_project_id,
             'robot_source' => $robot_source,
             'user_agent' => $user_agent,
             'ip_address' => $ip_address,
@@ -205,7 +216,15 @@ class SemanticFlow_Tracker_Admin {
     }
     
     public function register_settings() {
-        register_setting('semanticflow_tracker_settings', 'sft_project_id');
+        register_setting(
+            'semanticflow_tracker_settings',
+            'sft_project_id',
+            array(
+                'type' => 'string',
+                'sanitize_callback' => 'sanitize_text_field',
+                'default' => ''
+            )
+        );
     }
     
     public function settings_page() {
